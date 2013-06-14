@@ -26,4 +26,20 @@ class Composer
     {
         $this->executor->execute('composer require '.$packageName);
     }
+
+    public function getPackage($packageName)
+    {
+        $rawSchema = file_get_contents('composer.lock');
+        $schema = json_decode($rawPackages, true);
+
+        $package = null;
+        foreach ($schema['packages'] as $currentPackage) {
+            if ($currentPackage['name'] === $packageName) {
+                $package = $currentPackage;
+                break;
+            }
+        }
+
+        return $package;
+    }
 }
