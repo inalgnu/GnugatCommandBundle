@@ -23,9 +23,9 @@ class InstallBundleCommand extends ContainerAwareCommand
             ->setHelp(<<<EOT
 The <info>bundle:install</info> command helps you to install existing bundles
 by:
-1. using the `composer.phar require <composer-package-name>`;
+1. using the `composer require <composer-package-name>` command;
 2. adding it to the `app/AppKernel.php` file;
-3. setting its default configuration.
+3. setting its default configuration into the `app/config/config.yml` file.
 EOT
         );
     }

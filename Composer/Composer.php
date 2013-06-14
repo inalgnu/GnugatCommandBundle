@@ -18,12 +18,12 @@ class Composer
     }
 
     /**
-     * Adds the given package to the composer.json file and install it
+     * Adds the given package to the composer.json file and downloads it
      *
      * @param string $packageName The package name
      */
-    public function install($packageName)
+    public function installPackage($packageName)
     {
-        $this->executor->execute('composer.phar require '.$packageName);
+        $this->executor->execute('composer require '.$packageName);
     }
 }
